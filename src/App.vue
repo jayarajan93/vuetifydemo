@@ -13,7 +13,7 @@
     <v-list-item><router-link to ="/create">Create</router-link></v-list-item>
     </v-list>
    
-      </v-main>
+    </v-main>
       
   </v-app>
 </template>

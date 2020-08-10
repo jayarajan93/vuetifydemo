@@ -6,7 +6,7 @@
         <v-text-field label="Name" placeholder="Enter Your Name" v-model="name">name</v-text-field>
         <v-text-field label="Note" placeholder="Notification will appear here" v-model="notes">notes</v-text-field>
         <v-btn rounded color="primary" dark v-on:click="submit">Submit</v-btn>
-        </v-container>
+      </v-container>
     </v-form>
   </div>
 
@@ -23,9 +23,9 @@ export default class Delete extends Vue
 {
   name=""
   notes=""
-submit()
+async submit()
 {
-  const response=axios.delete(`${server.baseURL}/delete/${this.name}`).then((response)=>{
+  const response=await axios.delete(`${server.baseURL}/delete/${this.name}`).then((response)=>{
 this.notes=response.data
   
 },(error)=>{

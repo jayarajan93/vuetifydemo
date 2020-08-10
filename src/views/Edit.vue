@@ -28,7 +28,7 @@ export default class Edit extends Vue
     notes:""
   }
   recordNotes=""
-submit()
+async submit()
 {
   this.updNote.name=this.name
   this.updNote.notes=this.notes
@@ -39,7 +39,7 @@ submit()
 if(typeof this.updNote==='object'){
    newupdNotes=JSON.parse(JSON.stringify(this.updNote))
 }
-  const response=axios.put(`${server.baseURL}/update`,newupdNotes).then((response)=>{
+  const response=await axios.put(`${server.baseURL}/update`,newupdNotes).then((response)=>{
 console.log(response.data);
   this.recordNotes=response.data
   },(error)=>{

@@ -7,7 +7,7 @@
         <v-text-field label="Note" placeholder="Enter your note here" v-model="notes">notes</v-text-field>
         <v-text-field label="Record" placeholder="Your added notes" v-model="recordnotes">recordnotes</v-text-field>
         <v-btn rounded color="primary" dark v-on:click="submit">Submit</v-btn>
-        </v-container>
+      </v-container>
     </v-form>
   </div>
 </template>

@@ -1,6 +1,5 @@
 <template>
   <div class="Look">
-    
     <v-form>
       <v-container>
         <v-text-field label="Name" placeholder="Enter Your Name" v-model="name">name</v-text-field>
@@ -23,14 +22,13 @@ export default class Look extends Vue
 {
   name=""
   notes=""
-submit()
+async submit()
 {
-  const response= axios.get(`${server.baseURL}/view/${this.name}`).then((response)=>{
+  const response= await axios.get(`${server.baseURL}/view/${this.name}`).then((response)=>{
     this.notes=response.data
   },(error)=>{  
     console.log(error)
-  });
-  
+  }); 
 }
 }
 </script>
